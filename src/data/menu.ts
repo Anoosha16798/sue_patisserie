@@ -7,50 +7,50 @@ import type {
 export const menuCategories: MenuCategory[] = [
   {
     id: "signature-cakes",
-    title: "Signature Cakes",
-    tagline: "Six-inch celebrations, finished in whipped cream or buttercream.",
+    title: "The Cakes",
+    tagline: "Every cake: whipped cream frosting  ·  buttercream frosting",
     subcategories: [
       {
         id: "basic-range",
-        title: "Basic Range",
-        blurb: "Everyday luxury sponges with cloud-soft fillings.",
+        title: "House classics",
+        blurb: "Standard flavours. Extra for decoration or customisation.",
       },
       {
         id: "premium-range",
-        title: "Premium Range",
-        blurb: "Ganache, fruit, caramel, and Belgian chocolate drama.",
+        title: "Prestige",
+        blurb: "Fruit, ganache, Belgian chocolate, caramel.",
       },
       {
         id: "custom-themes",
-        title: "Custom Themes",
-        blurb: "Moodboards welcome — we sculpt the cake to the story.",
+        title: "Custom couture",
+        blurb: "Birthday, wedding, gym, baby shower, anniversary — your brief.",
       },
     ],
   },
   {
     id: "quick-bites",
-    title: "Quick Bites & Delights",
-    tagline: "Teacakes, cupcakes, cookies, jars — the little rituals.",
+    title: "Counter treats",
+    tagline: "Teacakes, cupcakes, cookies, brownies and jars.",
     subcategories: [
       {
         id: "teacakes",
         title: "Teacakes · 250g",
-        blurb: "Loaf-style slices for chai hour and gifting.",
+        blurb: "Loaf slices for chai and gifting.",
       },
       {
         id: "cupcakes-muffins",
-        title: "Cupcakes & Muffins",
-        blurb: "Party packs with bakery-case energy.",
+        title: "Cupcakes & muffins",
+        blurb: "Party packs, baked to order.",
       },
       {
         id: "cookies-biscuits",
-        title: "Cookies & Biscuits",
-        blurb: "Crisp, chewy, and made for sharing tins.",
+        title: "Cookies & biscuits",
+        blurb: "Tins, pairs, and nan khatai.",
       },
       {
         id: "squares-jars",
-        title: "Decadent Squares & Jars",
-        blurb: "Spoonable, sliceable, dangerously moreish.",
+        title: "Squares & jars",
+        blurb: "Brownies, cheesecakes, tiramisu, baked yogurt.",
       },
     ],
   },
@@ -62,9 +62,10 @@ const cakeImages = (primary: string, extra: string[]): string[] => [
 ];
 
 const extraGallery = [
+  "/images/real-gold-top.jpg",
+  "/images/real-roses.jpg",
+  "/images/real-pineapple.jpg",
   "/images/cream.jpg",
-  "/images/slice.jpg",
-  "/images/ingredients.jpg",
 ] as const;
 
 export const menuItems: MenuItem[] = [
@@ -75,7 +76,10 @@ export const menuItems: MenuItem[] = [
       "Vanilla frosted with a plain vanilla cream filling — the quiet show-off of the cabinet.",
     priceWhipped: 899,
     priceButtercream: 1099,
-    images: cakeImages("/images/vanilla-cake.jpg", [...extraGallery]),
+    images: cakeImages("/images/real-blue-birthday.jpg", [
+      "/images/vanilla-cake.jpg",
+      ...extraGallery,
+    ]),
     ingredientBullets: [
       "Madagascar vanilla bean paste folded into a tender eggless sponge",
       "Amul butter creamed until pale for a fine, bakery crumb",
@@ -140,7 +144,10 @@ export const menuItems: MenuItem[] = [
       "Sunny pineapple cake — bright fruit, airy cream, zero nostalgia-core cheese.",
     priceWhipped: 899,
     priceButtercream: 1099,
-    images: cakeImages("/images/pineapple.jpg", [...extraGallery]),
+    images: cakeImages("/images/real-pineapple.jpg", [
+      "/images/pineapple.jpg",
+      ...extraGallery,
+    ]),
     ingredientBullets: [
       "Vanilla sponge soaked with pineapple syrup, never canned-sweet overload",
       "Chopped ripe pineapple folded into fresh cream",
@@ -181,7 +188,8 @@ export const menuItems: MenuItem[] = [
       "Ruby crumb, cocoa hush, and a cream cheese–style filling that stays 100% eggless.",
     priceWhipped: 1099,
     priceButtercream: 1299,
-    images: cakeImages("/images/red-velvet.jpg", [
+    images: cakeImages("/images/real-red-velvet.jpg", [
+      "/images/red-velvet.jpg",
       "/images/rv-cupcakes.jpg",
       ...extraGallery,
     ]),
@@ -205,7 +213,8 @@ export const menuItems: MenuItem[] = [
       "A lighter chocolate architecture — mousse between layers, never a premix pudding.",
     priceWhipped: 1199,
     priceButtercream: 1399,
-    images: cakeImages("/images/choc-mousse.jpg", [
+    images: cakeImages("/images/real-gold-side.jpg", [
+      "/images/choc-mousse.jpg",
       "/images/belgian-mousse.jpg",
       ...extraGallery,
     ]),
@@ -229,8 +238,9 @@ export const menuItems: MenuItem[] = [
       "Dense ganache energy — the cake you send when words feel insufficient.",
     priceWhipped: 1199,
     priceButtercream: 1399,
-    images: cakeImages("/images/choc-truffle.jpg", [
-      "/images/gold-cake.jpg",
+    images: cakeImages("/images/real-gold-top.jpg", [
+      "/images/choc-truffle.jpg",
+      "/images/real-gold-side.jpg",
       ...extraGallery,
     ]),
     ingredientBullets: [
@@ -408,8 +418,9 @@ export const menuItems: MenuItem[] = [
       "Split palettes, tiny booties, and soft pastels — half-and-half cakes for the reveal table.",
     priceWhipped: 1599,
     priceButtercream: 1899,
-    images: cakeImages("/images/baby-shower.jpg", [
-      "/images/floral.jpg",
+    images: cakeImages("/images/real-gender-reveal.jpg", [
+      "/images/real-half-baby.jpg",
+      "/images/baby-shower.jpg",
       ...extraGallery,
     ]),
     ingredientBullets: [
@@ -431,8 +442,8 @@ export const menuItems: MenuItem[] = [
       "Leaf canopies, fondant-free sculpted buttercream animals, and jungle-floor chocolate crumbs.",
     priceWhipped: 1899,
     priceButtercream: 2299,
-    images: cakeImages("/images/jungle.jpg", [
-      "/images/baby-shower.jpg",
+    images: cakeImages("/images/real-jungle.jpg", [
+      "/images/jungle.jpg",
       ...extraGallery,
     ]),
     ingredientBullets: [
@@ -454,8 +465,9 @@ export const menuItems: MenuItem[] = [
       "Palette-knife petals, ranunculus ruffles, and garden cakes that look picked this morning.",
     priceWhipped: 1699,
     priceButtercream: 2099,
-    images: cakeImages("/images/floral.jpg", [
-      "/images/vanilla-cake.jpg",
+    images: cakeImages("/images/real-roses.jpg", [
+      "/images/floral.jpg",
+      "/images/real-blue-birthday.jpg",
       ...extraGallery,
     ]),
     ingredientBullets: [
@@ -478,7 +490,8 @@ export const menuItems: MenuItem[] = [
       "Dark chocolate architecture with edible gold — red-carpet energy for the dessert table.",
     priceWhipped: 1799,
     priceButtercream: 2199,
-    images: cakeImages("/images/gold-cake.jpg", [
+    images: cakeImages("/images/real-gold-side.jpg", [
+      "/images/real-gold-top.jpg",
       "/images/belgian-truffle.jpg",
       ...extraGallery,
     ]),
@@ -493,6 +506,77 @@ export const menuItems: MenuItem[] = [
     unit: "starting · 6-inch",
     isCustomTheme: true,
     tags: ["custom", "chocolate"],
+  },
+  {
+    id: "birthday-theme",
+    name: "Birthday theme cakes",
+    description:
+      "Ruffles, toppers, lettering — any house or prestige flavour, dressed for the birthday table.",
+    priceWhipped: 1499,
+    priceButtercream: 1899,
+    images: cakeImages("/images/real-blue-birthday.jpg", [
+      "/images/real-red-velvet.jpg",
+      "/images/real-roses.jpg",
+      ...extraGallery,
+    ]),
+    ingredientBullets: [
+      "Pick any basic or prestige flavour as the cake",
+      "Amul butter frosting in whipped cream or buttercream",
+      "Custom toppers, candles, and piped names",
+      "Decoration priced on the brief — we keep it scratch-made, never premix",
+    ],
+    category: "signature-cakes",
+    subcategory: "custom-themes",
+    unit: "starting · 6-inch",
+    isCustomTheme: true,
+    featured: true,
+    tags: ["custom", "birthday"],
+  },
+  {
+    id: "wedding-anniversary",
+    name: "Wedding & anniversary cakes",
+    description:
+      "Florals, pearls, gold plaques — elegant cakes for vows and yearly love notes.",
+    priceWhipped: 1899,
+    priceButtercream: 2399,
+    images: cakeImages("/images/real-roses.jpg", [
+      "/images/real-gold-side.jpg",
+      ...extraGallery,
+    ]),
+    ingredientBullets: [
+      "Your choice of sponge, always eggless and scratch-mixed",
+      "Buttercream florals or a clean whipped cream jacket",
+      "Edible pearls, gold leaf, and custom lettering",
+      "Premium chocolate or fresh cream fillings to match the flavour",
+    ],
+    category: "signature-cakes",
+    subcategory: "custom-themes",
+    unit: "starting · 6-inch",
+    isCustomTheme: true,
+    tags: ["custom"],
+  },
+  {
+    id: "gym-theme",
+    name: "Gym theme cakes",
+    description:
+      "Dumbbells, protein-joke lettering, and still a real cake — because gains include dessert.",
+    priceWhipped: 1699,
+    priceButtercream: 2099,
+    images: cakeImages("/images/real-gold-top.jpg", [
+      "/images/real-gold-side.jpg",
+      ...extraGallery,
+    ]),
+    ingredientBullets: [
+      "Any signature flavour as the base",
+      "Sculpted buttercream details (weights, bottles, banners)",
+      "Whipped cream option for simpler colour-block designs",
+      "Made with Amul butter, fresh cream, premium chocolate — no premix",
+    ],
+    category: "signature-cakes",
+    subcategory: "custom-themes",
+    unit: "starting · 6-inch",
+    isCustomTheme: true,
+    tags: ["custom"],
   },
   {
     id: "orange-teacake",
@@ -857,53 +941,51 @@ export const menuItems: MenuItem[] = [
 export const featuredMedia: FeaturedMedia[] = [
   {
     id: "feat-hero",
-    title: "Chocolate Mousse",
-    caption: "Looping ganache energy",
-    image: "/images/choc-mousse.jpg",
+    title: "Gold-dusted chocolate",
+    caption: "Ganache pool, edible gold, main-character cake",
+    image: "/images/real-gold-side.jpg",
     video: "/videos/ganache-loop.mp4",
-    href: "/menu?item=chocolate-mousse",
+    href: "/menu/gold-dusted-chocolate",
     span: "hero",
   },
   {
-    id: "feat-floral",
-    title: "Floral Buttercream",
-    caption: "Garden cakes, palette-knife petals",
-    image: "/images/floral.jpg",
-    href: "/menu?item=floral-buttercream",
+    id: "feat-jungle",
+    title: "Jungle / Lion King",
+    caption: "Sculpted, leafy, birthday-coded",
+    image: "/images/real-jungle.jpg",
+    href: "/menu/jungle-lion-king",
     span: "tall",
   },
   {
-    id: "feat-cupcake",
-    title: "Vanilla Lemon",
-    caption: "Pack of six, picnic-coded",
-    image: "/images/lemon-cupcakes.jpg",
-    video: "/videos/cupcake-loop.mp4",
-    href: "/menu?item=vanilla-lemon-cupcakes",
+    id: "feat-velvet",
+    title: "Red velvet",
+    caption: "Happy birthday, my king",
+    image: "/images/real-red-velvet.jpg",
+    href: "/menu/red-velvet",
     span: "square",
   },
   {
-    id: "feat-cream",
-    title: "Fresh Cream Ritual",
-    caption: "Whipped daily, never from a tub mix",
-    image: "/images/cream.jpg",
-    video: "/videos/cream-loop.mp4",
-    href: "/about",
+    id: "feat-baby",
+    title: "Baby shower",
+    caption: "Half-cakes & gender-reveal palettes",
+    image: "/images/real-gender-reveal.jpg",
+    href: "/menu/baby-shower-half",
     span: "wide",
   },
   {
-    id: "feat-velvet",
-    title: "Red Velvet",
-    caption: "Ruby crumb, eggless cream cheese swirl",
-    image: "/images/red-velvet.jpg",
-    href: "/menu?item=red-velvet",
+    id: "feat-pine",
+    title: "Pineapple",
+    caption: "Fresh fruit, whipped cloud",
+    image: "/images/real-pineapple.jpg",
+    href: "/menu/pineapple",
     span: "square",
   },
   {
-    id: "feat-brownie",
-    title: "Brownie Squares",
-    caption: "Plain · walnut · hazelnut · cookie dough",
-    image: "/images/brownies.jpg",
-    href: "/menu?item=brownies",
+    id: "feat-roses",
+    title: "Floral buttercream",
+    caption: "Roses, pearls, gold plaque",
+    image: "/images/real-roses.jpg",
+    href: "/menu/floral-buttercream",
     span: "square",
   },
 ];

@@ -10,7 +10,11 @@ export type IllustrationKind =
   | "pastry"
   | "cookie"
   | "kids"
-  | "gift";
+  | "gift"
+  | "knife"
+  | "cake"
+  | "brownie"
+  | "whip";
 
 interface AnimatedIllustrationProps {
   kind: IllustrationKind;
@@ -132,6 +136,48 @@ function Gift() {
   );
 }
 
+function Whip() {
+  return (
+    <svg viewBox="0 0 90 90" fill="none" aria-hidden="true" className="h-full w-full">
+      <path d="M18 70c10-28 44-28 54 0" stroke="currentColor" strokeWidth="1.7" />
+      <path d="M24 58c8-8 34-8 42 0" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M30 48c6-10 24-10 30 0" stroke="currentColor" strokeWidth="1.5" />
+      <circle cx="45" cy="34" r="8" stroke="currentColor" strokeWidth="1.6" fill="currentColor" fillOpacity="0.08" />
+    </svg>
+  );
+}
+
+function Knife() {
+  return (
+    <svg viewBox="0 0 120 40" fill="none" aria-hidden="true" className="h-full w-full">
+      <path d="M8 22h62c8 0 14-4 22-4 10 0 18 6 20 10" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+      <path d="M8 22c18-10 48-12 62 0" stroke="currentColor" strokeWidth="1.6" />
+      <path d="M92 18v16" stroke="currentColor" strokeWidth="2" />
+    </svg>
+  );
+}
+
+function Cake() {
+  return (
+    <svg viewBox="0 0 90 90" fill="none" aria-hidden="true" className="h-full w-full">
+      <path d="M22 48c2 16 44 16 46 0V36c-2-12-44-12-46 0v12Z" stroke="currentColor" strokeWidth="1.7" />
+      <path d="M22 48c8 6 38 6 46 0" stroke="currentColor" strokeWidth="1.4" />
+      <path d="M36 28c4-10 14-10 18 0" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+      <path d="M18 62h54" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function Brownie() {
+  return (
+    <svg viewBox="0 0 80 80" fill="none" aria-hidden="true" className="h-full w-full">
+      <path d="M18 28h44l-6 28H24L18 28Z" stroke="currentColor" strokeWidth="1.7" />
+      <path d="M18 28l22-10 22 10" stroke="currentColor" strokeWidth="1.6" />
+      <path d="M40 18v38" stroke="currentColor" strokeWidth="1.3" />
+    </svg>
+  );
+}
+
 const ILLUSTRATIONS: Record<IllustrationKind, () => ReactNode> = {
   whisk: Whisk,
   cream: Cream,
@@ -140,6 +186,10 @@ const ILLUSTRATIONS: Record<IllustrationKind, () => ReactNode> = {
   cookie: Cookie,
   kids: Kids,
   gift: Gift,
+  knife: Knife,
+  cake: Cake,
+  brownie: Brownie,
+  whip: Whip,
 };
 
 export function AnimatedIllustration({
@@ -152,7 +202,7 @@ export function AnimatedIllustration({
 
   return (
     <motion.div
-      className={`pointer-events-none text-cocoa/25 ${className}`}
+      className={`pointer-events-none text-fg/25 ${className}`}
       initial={{ opacity: 0, y: amplitude }}
       animate={{
         opacity: 1,
