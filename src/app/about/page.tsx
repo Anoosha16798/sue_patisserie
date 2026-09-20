@@ -1,76 +1,43 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Reveal } from "@/components/AnimatedIllustration";
-import { AnimatedIllustration } from "@/components/AnimatedIllustration";
 
 export const metadata: Metadata = {
-  title: "About the Home Bakery",
+  title: "About",
   description:
-    "Sue Patisserie: home-baking roots, a no-premixes kitchen, Amul butter and premium chocolate, and cleanliness as a love language.",
+    "Sue Patisserie is a home bakery. All items are eggless, made from scratch with Amul butter, Amul fresh cream and premium chocolates. No premixes.",
   alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {
   return (
-    <div className="relative mx-auto max-w-6xl px-5 py-12 md:px-8 md:py-16">
-      <AnimatedIllustration
-        kind="stand"
-        className="absolute top-10 right-6 hidden h-28 w-24 lg:block"
-      />
-      <header className="max-w-2xl">
-        <p className="text-[11px] tracking-[0.28em] text-accent uppercase">Our roots</p>
-        <h1 className="font-display mt-3 text-5xl md:text-6xl">
-          Baked at home.
-          <span className="italic text-accent"> Held to a patisserie standard.</span>
-        </h1>
-      </header>
-
-      <div className="mt-12 grid items-center gap-10 lg:grid-cols-2">
-        <Reveal>
-          <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem]">
-            <Image
-              src="/images/real-half-baby.jpg"
-              alt="Custom baby shower half-cake from Sue Patisserie"
-              fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover"
-            />
-          </div>
-        </Reveal>
-        <Reveal delay={0.1}>
-          <p className="font-script text-4xl">once upon a mixing bowl</p>
-          <p className="mt-4 text-base leading-relaxed text-muted">
-            All items are made with premium ingredients — Amul butter, Amul fresh
-            cream, premium chocolates — with utmost care and cleanliness. Everything
-            is eggless and made from scratch at home, without premixes.
+    <div className="mx-auto max-w-[820px] px-5 py-14 md:px-8 md:py-20">
+      <h1 className="font-display text-3xl font-medium md:text-4xl">About</h1>
+      <div className="mt-10 grid items-start gap-10 md:grid-cols-2">
+        <div className="relative aspect-[4/5] overflow-hidden bg-bg2">
+          <Image
+            src="/images/real-half-baby.jpg"
+            alt="Baby shower cake from Sue Patisserie"
+            fill
+            sizes="(max-width: 768px) 100vw, 40vw"
+            className="object-cover"
+          />
+        </div>
+        <div className="text-[15px] leading-relaxed text-muted">
+          <p>
+            All our items are made with premium ingredients such as Amul butter,
+            Amul fresh cream, and premium chocolates, with the utmost care and
+            cleanliness.
           </p>
-          <p className="mt-4 text-base leading-relaxed text-muted">
-            Order your favourite cake, then add birthday, wedding, gym, baby shower
-            or anniversary décor. We would rather turn an order down than rush a crumb.
+          <p className="mt-4">
+            Everything is eggless and made from scratch at home, without using
+            any premixes.
           </p>
-        </Reveal>
-      </div>
-
-      <div className="mt-16 grid gap-6 md:grid-cols-3">
-        {[
-          {
-            title: "No premixes. Ever.",
-            copy: "If it comes as a powder labelled cake mix, it does not enter this kitchen.",
-          },
-          {
-            title: "Cleanliness as care",
-            copy: "Sanitised tools, covered racks, dated labels — fancy flavour is useless without trust.",
-          },
-          {
-            title: "Named ingredients",
-            copy: "Amul butter. Fresh cream. Premium chocolates. Real fruit. Filter coffee.",
-          },
-        ].map((block) => (
-          <article key={block.title} className="rounded-3xl border border-line bg-card p-6">
-            <h2 className="font-display text-2xl">{block.title}</h2>
-            <p className="mt-3 text-sm leading-relaxed text-muted">{block.copy}</p>
-          </article>
-        ))}
+          <p className="mt-4">
+            Order your favourite cakes and add any customisations you like,
+            including birthday theme cakes, wedding cakes, gym theme cakes, baby
+            shower cakes, anniversary cakes, and more.
+          </p>
+        </div>
       </div>
     </div>
   );

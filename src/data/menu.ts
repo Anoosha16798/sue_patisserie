@@ -7,50 +7,50 @@ import type {
 export const menuCategories: MenuCategory[] = [
   {
     id: "signature-cakes",
-    title: "The Cakes",
-    tagline: "Every cake: whipped cream frosting  ·  buttercream frosting",
+    title: "Cakes",
+    tagline: "",
     subcategories: [
       {
         id: "basic-range",
-        title: "House classics",
-        blurb: "Standard flavours. Extra for decoration or customisation.",
+        title: "Basic cakes",
+        blurb: "Standard flavours. Extra cost for any decoration or customisation.",
       },
       {
         id: "premium-range",
-        title: "Prestige",
-        blurb: "Fruit, ganache, Belgian chocolate, caramel.",
+        title: "Premium cakes",
+        blurb: "Fruit fillings, ganache, Belgian chocolate and caramel.",
       },
       {
         id: "custom-themes",
-        title: "Custom couture",
-        blurb: "Birthday, wedding, gym, baby shower, anniversary — your brief.",
+        title: "Custom themes",
+        blurb: "Birthday, wedding, gym, baby shower, anniversary, and more.",
       },
     ],
   },
   {
     id: "quick-bites",
-    title: "Counter treats",
-    tagline: "Teacakes, cupcakes, cookies, brownies and jars.",
+    title: "Other categories",
+    tagline: "",
     subcategories: [
       {
         id: "teacakes",
-        title: "Teacakes · 250g",
-        blurb: "Loaf slices for chai and gifting.",
+        title: "Teacakes",
+        blurb: "250g loaves.",
       },
       {
         id: "cupcakes-muffins",
-        title: "Cupcakes & muffins",
-        blurb: "Party packs, baked to order.",
+        title: "Cupcakes and muffins",
+        blurb: "",
       },
       {
         id: "cookies-biscuits",
-        title: "Cookies & biscuits",
-        blurb: "Tins, pairs, and nan khatai.",
+        title: "Biscuits and cookies",
+        blurb: "",
       },
       {
         id: "squares-jars",
-        title: "Squares & jars",
-        blurb: "Brownies, cheesecakes, tiramisu, baked yogurt.",
+        title: "Brownies, cheesecakes and jars",
+        blurb: "",
       },
     ],
   },
@@ -72,12 +72,11 @@ export const menuItems: MenuItem[] = [
   {
     id: "vanilla",
     name: "Vanilla",
-    description:
-      "Vanilla frosted with a plain vanilla cream filling — the quiet show-off of the cabinet.",
+    description: "Vanilla frosted cake with plain vanilla cream filling.",
     priceWhipped: 899,
     priceButtercream: 1099,
-    images: cakeImages("/images/real-blue-birthday.jpg", [
-      "/images/vanilla-cake.jpg",
+    images: cakeImages("/images/vanilla-cake.jpg", [
+      "/images/real-blue-birthday.jpg",
       ...extraGallery,
     ]),
     ingredientBullets: [
@@ -94,9 +93,8 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: "vanilla-coffee-cream",
-    name: "Vanilla & Coffee Cream",
-    description:
-      "Soft vanilla layers with a mellow coffee cream — espresso-bar energy, dessert-table manners.",
+    name: "Vanilla & coffee cream",
+    description: "Vanilla cake with coffee cream.",
     priceWhipped: 949,
     priceButtercream: 1149,
     images: cakeImages("/images/coffee-cake.jpg", [
@@ -117,8 +115,7 @@ export const menuItems: MenuItem[] = [
   {
     id: "butterscotch",
     name: "Butterscotch",
-    description:
-      "Rich butterscotch cream filling with caramel notes that linger like a good story.",
+    description: "With rich butterscotch cream filling.",
     priceWhipped: 999,
     priceButtercream: 1199,
     images: cakeImages("/images/butterscotch.jpg", [
@@ -140,8 +137,7 @@ export const menuItems: MenuItem[] = [
   {
     id: "pineapple",
     name: "Pineapple",
-    description:
-      "Sunny pineapple cake — bright fruit, airy cream, zero nostalgia-core cheese.",
+    description: "Vanilla sponge with pineapple filling.",
     priceWhipped: 899,
     priceButtercream: 1099,
     images: cakeImages("/images/real-pineapple.jpg", [
@@ -161,9 +157,8 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: "irish-coffee",
-    name: "Irish Coffee",
-    description:
-      "Coffee, cream, and a grown-up cocoa depth — the after-dinner cake that still slays on Instagram.",
+    name: "Irish coffee cake",
+    description: "Coffee-soaked sponge with cream.",
     priceWhipped: 1099,
     priceButtercream: 1299,
     images: cakeImages("/images/irish-coffee.jpg", [
@@ -183,9 +178,8 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: "red-velvet",
-    name: "Red Velvet",
-    description:
-      "Ruby crumb, cocoa hush, and a cream cheese–style filling that stays 100% eggless.",
+    name: "Red velvet",
+    description: "Classic red velvet, eggless.",
     priceWhipped: 1099,
     priceButtercream: 1299,
     images: cakeImages("/images/real-red-velvet.jpg", [
@@ -208,9 +202,8 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: "chocolate-mousse",
-    name: "Chocolate Mousse",
-    description:
-      "A lighter chocolate architecture — mousse between layers, never a premix pudding.",
+    name: "Chocolate mousse",
+    description: "Chocolate sponge with mousse filling.",
     priceWhipped: 1199,
     priceButtercream: 1399,
     images: cakeImages("/images/real-gold-side.jpg", [
@@ -233,9 +226,8 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: "chocolate-truffle",
-    name: "Chocolate Truffle",
-    description:
-      "Dense ganache energy — the cake you send when words feel insufficient.",
+    name: "Chocolate truffle",
+    description: "Chocolate sponge with truffle ganache.",
     priceWhipped: 1199,
     priceButtercream: 1399,
     images: cakeImages("/images/real-gold-top.jpg", [
@@ -256,9 +248,8 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: "fruity-vanilla",
-    name: "Fruity Vanilla",
-    description:
-      "Fresh fruit filling — strawberry, blueberry, raspberry, or orange — inside a vanilla cloud.",
+    name: "Fruity vanilla",
+    description: "Vanilla frosted cake with fresh fruit filling: strawberry, blueberry, raspberry or orange.",
     priceWhipped: 1299,
     priceButtercream: 1499,
     images: cakeImages("/images/fruity-vanilla.jpg", [
@@ -279,9 +270,8 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: "fruity-chocolate",
-    name: "Fruity Chocolate",
-    description:
-      "Rich chocolate ganache with a bright fruit filling — sweet-meets-tart, very main character.",
+    name: "Fruity chocolate",
+    description: "Frosted with rich chocolate ganache, filling of orange, strawberry, blueberry or raspberry.",
     priceWhipped: 1399,
     priceButtercream: 1599,
     images: cakeImages("/images/fruity-choc.jpg", [
@@ -301,9 +291,8 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: "london-cake",
-    name: "London Cake",
-    description:
-      "Chocolate ganache and rich caramel filling — foggy-evening decadence with a gold-hour finish.",
+    name: "London cake",
+    description: "Frosted with chocolate ganache and a rich caramel filling.",
     priceWhipped: 1499,
     priceButtercream: 1699,
     images: cakeImages("/images/london.jpg", [
@@ -325,9 +314,8 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: "belgian-chocolate-mousse",
-    name: "Belgian Chocolate Mousse",
-    description:
-      "Belgian chocolate, whipped into a mousse that still stands tall on a celebration cake.",
+    name: "Belgian chocolate mousse cake",
+    description: "Mousse cake made with Belgian chocolate.",
     priceWhipped: 1499,
     priceButtercream: 1699,
     images: cakeImages("/images/belgian-mousse.jpg", [
@@ -347,9 +335,8 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: "belgian-chocolate-truffle",
-    name: "Belgian Chocolate Truffle",
-    description:
-      "The maximalist truffle — Belgian chocolate ganache, glossy, unapologetic.",
+    name: "Belgian chocolate truffle cake",
+    description: "Truffle cake made with Belgian chocolate.",
     priceWhipped: 1499,
     priceButtercream: 1699,
     images: cakeImages("/images/belgian-truffle.jpg", [
@@ -369,9 +356,8 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: "chocolate-hazelnut",
-    name: "Chocolate Hazelnut",
-    description:
-      "Roasted hazelnut paste, chocolate, and a little crunch — Nutella’s sophisticated cousin.",
+    name: "Chocolate hazelnut cake",
+    description: "Chocolate cake with hazelnut filling.",
     priceWhipped: 1399,
     priceButtercream: 1599,
     images: cakeImages("/images/hazelnut.jpg", [
@@ -391,9 +377,8 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: "black-forest",
-    name: "Black Forest",
-    description:
-      "Cherries, chocolate, cream — the classic, rebuilt scratch-made and fully eggless.",
+    name: "Black forest",
+    description: "Chocolate, cream and cherries.",
     priceWhipped: 1299,
     priceButtercream: 1499,
     images: cakeImages("/images/black-forest.jpg", [
@@ -413,9 +398,8 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: "baby-shower-half",
-    name: "Baby Shower Half-Cakes",
-    description:
-      "Split palettes, tiny booties, and soft pastels — half-and-half cakes for the reveal table.",
+    name: "Baby shower cakes",
+    description: "Half-cakes, gender-reveal and baby themes. Extra for decoration.",
     priceWhipped: 1599,
     priceButtercream: 1899,
     images: cakeImages("/images/real-gender-reveal.jpg", [
@@ -437,9 +421,8 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: "jungle-lion-king",
-    name: "Lion King / Jungle Themes",
-    description:
-      "Leaf canopies, fondant-free sculpted buttercream animals, and jungle-floor chocolate crumbs.",
+    name: "Jungle / Lion King cakes",
+    description: "Themed celebration cake. Extra for decoration.",
     priceWhipped: 1899,
     priceButtercream: 2299,
     images: cakeImages("/images/real-jungle.jpg", [
@@ -460,9 +443,8 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: "floral-buttercream",
-    name: "Floral Buttercream Designs",
-    description:
-      "Palette-knife petals, ranunculus ruffles, and garden cakes that look picked this morning.",
+    name: "Floral buttercream cakes",
+    description: "Piped floral designs. Extra for decoration.",
     priceWhipped: 1699,
     priceButtercream: 2099,
     images: cakeImages("/images/real-roses.jpg", [
@@ -485,9 +467,8 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: "gold-dusted-chocolate",
-    name: "Gold-Dusted Chocolate Cakes",
-    description:
-      "Dark chocolate architecture with edible gold — red-carpet energy for the dessert table.",
+    name: "Gold-dusted chocolate cakes",
+    description: "Chocolate cake with edible gold. Extra for decoration.",
     priceWhipped: 1799,
     priceButtercream: 2199,
     images: cakeImages("/images/real-gold-side.jpg", [
@@ -510,8 +491,7 @@ export const menuItems: MenuItem[] = [
   {
     id: "birthday-theme",
     name: "Birthday theme cakes",
-    description:
-      "Ruffles, toppers, lettering — any house or prestige flavour, dressed for the birthday table.",
+    description: "Any flavour, with birthday décor. Extra for decoration.",
     priceWhipped: 1499,
     priceButtercream: 1899,
     images: cakeImages("/images/real-blue-birthday.jpg", [
@@ -534,9 +514,8 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: "wedding-anniversary",
-    name: "Wedding & anniversary cakes",
-    description:
-      "Florals, pearls, gold plaques — elegant cakes for vows and yearly love notes.",
+    name: "Wedding and anniversary cakes",
+    description: "Any flavour, with floral or gold décor. Extra for decoration.",
     priceWhipped: 1899,
     priceButtercream: 2399,
     images: cakeImages("/images/real-roses.jpg", [
@@ -558,8 +537,7 @@ export const menuItems: MenuItem[] = [
   {
     id: "gym-theme",
     name: "Gym theme cakes",
-    description:
-      "Dumbbells, protein-joke lettering, and still a real cake — because gains include dessert.",
+    description: "Any flavour, with gym décor. Extra for decoration.",
     priceWhipped: 1699,
     priceButtercream: 2099,
     images: cakeImages("/images/real-gold-top.jpg", [
@@ -580,8 +558,8 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: "orange-teacake",
-    name: "Orange Teacake",
-    description: "Zesty 250g loaf — sunshine crumb, glaze optional, chai mandatory.",
+    name: "Orange cake",
+    description: "250g teacake.",
     priceWhipped: 350,
     priceButtercream: null,
     images: cakeImages("/images/orange-cake.jpg", [...extraGallery]),
@@ -598,8 +576,8 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: "carrot-teacake",
-    name: "Carrot Teacake",
-    description: "Warm spice, grated carrot, and a 250g loaf that feels like a hug in foil.",
+    name: "Carrot cake",
+    description: "250g teacake.",
     priceWhipped: 380,
     priceButtercream: null,
     images: cakeImages("/images/carrot-cake.jpg", [...extraGallery]),
@@ -616,8 +594,8 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: "banana-teacake",
-    name: "Banana Teacake",
-    description: "Ripe banana loaf, 250g, deeply browned edges and a soft middle.",
+    name: "Banana cake",
+    description: "250g teacake.",
     priceWhipped: 350,
     priceButtercream: null,
     images: cakeImages("/images/banana-cake.jpg", [...extraGallery]),
@@ -634,8 +612,8 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: "vanilla-lemon-cupcakes",
-    name: "Vanilla Lemon Cupcakes",
-    description: "Bright lemon-vanilla crowns — a pack of six for the picnic blanket.",
+    name: "Vanilla lemon cupcakes",
+    description: "Pack of 6.",
     priceWhipped: 480,
     priceButtercream: 540,
     images: cakeImages("/images/lemon-cupcakes.jpg", [...extraGallery]),
@@ -654,8 +632,8 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: "chocolate-cupcakes",
-    name: "Chocolate Cupcakes",
-    description: "Deep cocoa cups with a swirl that photographs like a magazine cover.",
+    name: "Chocolate cupcakes",
+    description: "Pack of 6.",
     priceWhipped: 480,
     priceButtercream: 540,
     images: cakeImages("/images/choc-cupcakes.jpg", [...extraGallery]),
@@ -672,8 +650,8 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: "red-velvet-cupcakes",
-    name: "Red Velvet Cupcakes",
-    description: "Mini velvets, pack of six — the party favour that actually tastes expensive.",
+    name: "Red velvet cupcakes",
+    description: "Pack of 6.",
     priceWhipped: 520,
     priceButtercream: 580,
     images: cakeImages("/images/rv-cupcakes.jpg", [
@@ -693,8 +671,8 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: "pb-choc-muffins",
-    name: "Peanut Butter Chocolate Muffins",
-    description: "Salty-sweet muffins with a peanut butter ribbon — pack of four.",
+    name: "Peanut butter chocolate muffins",
+    description: "Pack of 4.",
     priceWhipped: 420,
     priceButtercream: null,
     images: cakeImages("/images/pb-muffins.jpg", [...extraGallery]),
@@ -711,8 +689,8 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: "blueberry-muffins",
-    name: "Blueberry Muffins",
-    description: "Bursting berries, tender crumb, pack of four — brunch royalty.",
+    name: "Blueberry muffins",
+    description: "Pack of 4.",
     priceWhipped: 400,
     priceButtercream: null,
     images: cakeImages("/images/blueberry-muffins.jpg", [...extraGallery]),
@@ -729,8 +707,8 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: "coffee-biscuit",
-    name: "Coffee Biscuit",
-    description: "Dunkable coffee biscuits with a grown-up roast note — 200g tin energy.",
+    name: "Coffee biscuit",
+    description: "200g.",
     priceWhipped: 220,
     priceButtercream: null,
     images: cakeImages("/images/coffee-biscuit.jpg", [...extraGallery]),
@@ -747,8 +725,8 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: "vanilla-chocolate-cookie",
-    name: "Vanilla Chocolate Cookie",
-    description: "Vanilla dough, chocolate pockets — two pieces of chewy-edged joy.",
+    name: "Vanilla chocolate cookie biscuits",
+    description: "2 pieces.",
     priceWhipped: 80,
     priceButtercream: null,
     images: cakeImages("/images/vanilla-cookie.jpg", [...extraGallery]),
@@ -765,8 +743,8 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: "double-chocolate-cookie",
-    name: "Double Chocolate Cookie",
-    description: "Cocoa dough plus chocolate chunks — two pieces, maximum drama.",
+    name: "Double chocolate cookie",
+    description: "2 pieces.",
     priceWhipped: 90,
     priceButtercream: null,
     images: cakeImages("/images/double-choc-cookie.jpg", [...extraGallery]),
@@ -783,8 +761,8 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: "oatmeal-cookies",
-    name: "Oatmeal Cookies",
-    description: "Toasty oats, brown-sugar caramelisation — two cookies, quietly addictive.",
+    name: "Oatmeal cookies",
+    description: "2 pieces.",
     priceWhipped: 80,
     priceButtercream: null,
     images: cakeImages("/images/oatmeal.jpg", [...extraGallery]),
@@ -801,8 +779,8 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: "nan-khatai",
-    name: "Nan Khatai",
-    description: "Ghee-forward, cardamom-scented desi shortbread — 100g of melt.",
+    name: "Nan khatai",
+    description: "Per 100g.",
     priceWhipped: 150,
     priceButtercream: null,
     images: cakeImages("/images/nankhatai.jpg", [...extraGallery]),
@@ -820,8 +798,7 @@ export const menuItems: MenuItem[] = [
   {
     id: "brownies",
     name: "Brownies",
-    description:
-      "Fudgy squares — choose plain, walnut, hazelnut, or cookie dough. All eggless, all intense.",
+    description: "Plain, walnut, hazelnut or cookie dough.",
     priceWhipped: 120,
     priceButtercream: null,
     images: cakeImages("/images/brownies.jpg", [
@@ -842,8 +819,8 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: "blueberry-cheesecake",
-    name: "Blueberry Cheesecake",
-    description: "Jar or slice of blueberry-swirled cheesecake — tang, fruit, biscuit base.",
+    name: "Blueberry cheesecake",
+    description: "Cheesecake with blueberry.",
     priceWhipped: 280,
     priceButtercream: null,
     images: cakeImages("/images/blueberry-cheesecake.jpg", [...extraGallery]),
@@ -860,8 +837,8 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: "biscoff-cheesecake",
-    name: "Biscoff Cheesecake",
-    description: "Speculoos crumb, lotus-style swirl, unreasonably moreish.",
+    name: "Biscoff cheesecake",
+    description: "Cheesecake with Biscoff.",
     priceWhipped: 300,
     priceButtercream: null,
     images: cakeImages("/images/biscoff.jpg", [...extraGallery]),
@@ -878,8 +855,8 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: "nyc-cheesecake",
-    name: "Plain New York Cheesecake",
-    description: "The clean classic — dense, vanilla, no distractions except excellence.",
+    name: "Plain New York cheesecake",
+    description: "Classic baked-style cheesecake.",
     priceWhipped: 260,
     priceButtercream: null,
     images: cakeImages("/images/nyc-cheesecake.jpg", [...extraGallery]),
@@ -897,7 +874,7 @@ export const menuItems: MenuItem[] = [
   {
     id: "tiramisu",
     name: "Tiramisu",
-    description: "Coffee-soaked layers, mascarpone-style cream, cocoa snow — jarred for chaos-free joy.",
+    description: "Coffee, cream and cocoa.",
     priceWhipped: 320,
     priceButtercream: null,
     images: cakeImages("/images/tiramisu.jpg", [
@@ -917,8 +894,8 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: "baked-yogurt",
-    name: "Baked Yogurt",
-    description: "Silky baked yogurt — the quiet luxury dessert that disappears first.",
+    name: "Baked yogurt",
+    description: "Baked yogurt, served chilled.",
     priceWhipped: 180,
     priceButtercream: null,
     images: cakeImages("/images/baked-yogurt.jpg", [

@@ -4,7 +4,7 @@ export const siteConfig = {
   name: "Sue Patisserie",
   tagline: "100% eggless · scratch-made · wildly customizable",
   description:
-    "Sue Patisserie is a premium home bakery crafting 100% eggless, scratch-made custom cakes and artisanal desserts with Amul butter, fresh cream, and fine chocolates.",
+    "Sue Patisserie is a home bakery. 100% eggless cakes and desserts, made from scratch with Amul butter, Amul fresh cream and premium chocolates. No premixes.",
   url: "https://suepatisserie.example.com",
   locale: "en_IN",
   phoneDisplay: "+91 98450 16798",

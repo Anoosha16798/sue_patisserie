@@ -1,62 +1,49 @@
 import type { Metadata } from "next";
-import { Ephesis, Fraunces, Sora } from "next/font/google";
+import { Cormorant_Garamond, IBM_Plex_Sans } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
-const display = Fraunces({
+const display = Cormorant_Garamond({
   variable: "--font-display",
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
 });
 
-const body = Sora({
+const body = IBM_Plex_Sans({
   variable: "--font-body",
   subsets: ["latin"],
-});
-
-const script = Ephesis({
-  variable: "--font-script",
-  subsets: ["latin"],
-  weight: "400",
+  weight: ["400", "500"],
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} | 100% Eggless Menu · Custom Cakes`,
+    default: `${siteConfig.name} | Eggless cake menu`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
   keywords: [
     "eggless bakery menu",
     "custom cakes Bengaluru",
-    "whipped cream vs buttercream cake price",
-    "home bakery",
+    "whipped cream frosting",
+    "buttercream frosting",
     "Sue Patisserie",
-    "scratch made cakes",
   ],
-  authors: [{ name: siteConfig.name }],
   openGraph: {
     type: "website",
     locale: siteConfig.locale,
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: `${siteConfig.name} | 100% Eggless Menu`,
+    title: `${siteConfig.name} | Eggless cake menu`,
     description: siteConfig.description,
-    images: [
-      {
-        url: "/images/real-gold-side.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Gold-dusted chocolate cake from Sue Patisserie",
-      },
-    ],
+    images: [{ url: "/images/real-gold-side.jpg", width: 1200, height: 630, alt: "Sue Patisserie chocolate cake" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} | Eggless custom cakes`,
+    title: `${siteConfig.name} | Eggless cake menu`,
     description: siteConfig.description,
     images: ["/images/real-gold-side.jpg"],
   },
@@ -81,15 +68,15 @@ const jsonLd = {
   },
 };
 
-const themeBoot = `(function(){try{var t=localStorage.getItem('sue-theme');if(t==='white'||t==='dark'||t==='pastel'){document.documentElement.setAttribute('data-theme',t);}else{document.documentElement.setAttribute('data-theme','pastel');}}catch(e){document.documentElement.setAttribute('data-theme','pastel');}})();`;
+const themeBoot = `(function(){try{var t=localStorage.getItem('sue-theme');if(t==='white'||t==='dark'||t==='pastel'){document.documentElement.setAttribute('data-theme',t);}else{document.documentElement.setAttribute('data-theme','white');}}catch(e){document.documentElement.setAttribute('data-theme','white');}})();`;
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      data-theme="pastel"
+      data-theme="white"
       suppressHydrationWarning
-      className={`${display.variable} ${body.variable} ${script.variable} h-full antialiased`}
+      className={`${display.variable} ${body.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-bg font-sans text-fg">
         <script dangerouslySetInnerHTML={{ __html: themeBoot }} />

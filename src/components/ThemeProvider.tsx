@@ -15,12 +15,12 @@ interface ThemeContextValue {
 const ThemeContext = createContext<ThemeContextValue | null>(null);
 
 function readStoredTheme(): ThemeId {
-  if (typeof window === "undefined") return "pastel";
+  if (typeof window === "undefined") return "white";
   const stored = window.localStorage.getItem(STORAGE_KEY);
   if (stored === "white" || stored === "dark" || stored === "pastel") {
     return stored;
   }
-  return "pastel";
+  return "white";
 }
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
@@ -47,33 +47,35 @@ export function useTheme(): ThemeContextValue {
   return value;
 }
 
-const THEMES: { id: ThemeId; label: string }[] = [
-  { id: "white", label: "White" },
-  { id: "dark", label: "Dark" },
-  { id: "pastel", label: "Pastel" },
+const SWATCHES: { id: ThemeId; label: string; fill: string; ring: string }[] = [
+  { id: "white", label: "Light", fill: "#f7f4ef", ring: "#1c1917" },
+  { id: "dark", label: "Dark", fill: "#141210", ring: "#d4a574" },
+  { id: "pastel", label: "Pastel", fill: "#e8c5d0", ring: "#9a5b6c" },
 ];
 
 export function ThemeSwitch() {
   const { theme, setTheme } = useTheme();
 
   return (
-    <div
-      className="inline-flex rounded-full border border-line bg-card p-1"
-      role="group"
-      aria-label="Colour theme"
-    >
-      {THEMES.map((item) => (
+    <div className="flex items-center gap-1.5" role="group" aria-label="Colour theme">
+      {SWATCHES.map((item) => (
         <button
           key={item.id}
           type="button"
+          title={item.label}
+          aria-label={item.label}
+          aria-pressed={theme === item.id}
           onClick={() => setTheme(item.id)}
-          className={`rounded-full px-3 py-1 text-[10px] tracking-[0.14em] uppercase transition ${
-            theme === item.id
-              ? "bg-invert text-on-invert"
-              : "text-muted hover:text-fg"
-          }`}
+          className="flex h-7 w-7 items-center justify-center rounded-full"
         >
-          {item.label}
+          <span
+            className="block h-3.5 w-3.5 rounded-full border"
+            style={{
+              background: item.fill,
+              borderColor: theme === item.id ? item.ring : "var(--line)",
+              boxShadow: theme === item.id ? `0 0 0 1.5px ${item.ring}` : "none",
+            }}
+          />
         </button>
       ))}
     </div>

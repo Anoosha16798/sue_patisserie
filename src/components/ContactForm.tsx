@@ -66,10 +66,9 @@ export function ContactForm({ presetItem }: ContactFormProps) {
         animate={{ opacity: 1, y: 0 }}
         className="rounded-3xl border border-accent2 bg-card p-8 text-center"
       >
-        <p className="font-script text-4xl text-fg">Saved a seat in the oven.</p>
-        <p className="mt-3 text-sm text-fg/70">
-          We’ll reply within a day with availability, flavour notes, and a
-          customisation plan. For faster love letters, WhatsApp works too.
+        <p className="font-display text-2xl text-fg">Thank you.</p>
+        <p className="mt-3 text-sm text-muted">
+          We’ll reply with availability. WhatsApp is faster if you need to lock a date.
         </p>
         <a
           href={siteConfig.whatsappHref}
@@ -170,7 +169,7 @@ export function ContactForm({ presetItem }: ContactFormProps) {
           className="mt-2 w-full rounded-2xl border border-line bg-card px-4 py-3 text-sm text-fg outline-none focus:border-accent"
         />
       </label>
-      {error ? <p className="text-sm text-rose">{error}</p> : null}
+      {error ? <p className="text-sm text-accent">{error}</p> : null}
       <button
         type="submit"
         disabled={status === "submitting"}
