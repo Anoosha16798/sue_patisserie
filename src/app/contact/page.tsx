@@ -30,7 +30,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
         </header>
 
         <div className="grid items-stretch gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-          <aside className="relative overflow-hidden rounded-sm bg-bg2">
+          <aside className="photo relative bg-bg2">
             <div className="relative min-h-[280px] lg:h-full">
               <Image
                 src="/images/real-roses.jpg"
@@ -41,7 +41,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
               />
               <div className="absolute inset-0 bg-linear-to-t from-black/75 via-black/25 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 p-6 text-white md:p-8">
-                <p className="font-script text-3xl">atelier hours</p>
+                <p className="font-script text-3xl">order hours</p>
                 <p className="mt-1 text-sm text-white/85">{siteConfig.hours}</p>
                 <dl className="mt-6 space-y-3 text-sm">
                   <div>
@@ -57,7 +57,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
                     </dd>
                   </div>
                   <div>
-                    <dt className="text-[10px] tracking-[0.18em] text-white/60 uppercase">Atelier</dt>
+                    <dt className="text-[10px] tracking-[0.18em] text-white/60 uppercase">Studio</dt>
                     <dd>{siteConfig.address}</dd>
                   </div>
                 </dl>
@@ -74,7 +74,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
             </div>
           </aside>
 
-          <div className="border border-line bg-card p-6 shadow-[0_20px_60px_-40px_rgba(0,0,0,0.45)] md:p-10">
+          <div className="card-soft border border-line p-6 md:p-10">
             <p className="font-display text-2xl italic">Inquiry</p>
             <p className="mt-1 mb-6 text-[13px] text-muted">
               Forty-eight hours’ notice is preferred. Themes need a little extra time.

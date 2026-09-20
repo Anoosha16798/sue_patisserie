@@ -4,14 +4,14 @@ export const siteConfig = {
   name: "Sue Patisserie",
   tagline: "100% eggless · scratch-made · wildly customizable",
   description:
-    "Sue Patisserie is a Bengaluru home bakery. 100% eggless cakes, brownies, macarons and desserts, made from scratch with Amul butter, Amul fresh cream and premium chocolates. No premixes. Custom birthday, wedding, baby shower and theme cakes.",
+    "Sue Patisserie is a professional certified baker in Bengaluru. 100% eggless cakes, brownies, macarons and desserts, made from scratch with Amul butter, Amul fresh cream and premium chocolates. No premixes. Custom birthday, wedding, baby shower and theme cakes.",
   url: "https://suepatisserie.example.com",
   locale: "en_IN",
   phoneDisplay: "+91 98450 16798",
   phoneHref: "tel:+919845016798",
   whatsappHref: "https://wa.me/919845016798",
   email: "hello@suepatisserie.com",
-  address: "Home atelier, Bengaluru — made to order, pan-city delivery",
+  address: "Bengaluru — made to order, pan-city delivery",
   hours: "Orders: Tue–Sun, 10:00–19:00 IST · 48-hour notice preferred",
   instagram: "@sue_patisserie",
 } as const;

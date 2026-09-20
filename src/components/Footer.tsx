@@ -8,7 +8,7 @@ export function Footer() {
         <div>
           <p className="font-script text-3xl">{siteConfig.name}</p>
           <p className="mt-2 max-w-xs leading-relaxed text-muted">
-            Home bakery. 100% eggless, made from scratch. No premixes.
+            Professional certified baker. 100% eggless, made from scratch. No premixes.
           </p>
         </div>
         <ul className="space-y-1 text-muted">

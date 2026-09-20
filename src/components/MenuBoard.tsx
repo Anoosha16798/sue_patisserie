@@ -100,7 +100,7 @@ function MenuRow({ item }: { item: MenuItem }) {
         href={`/menu/${item.id}`}
         className="grid grid-cols-[88px_1fr] items-start gap-3 py-4 md:grid-cols-[96px_1fr_5.6rem_6.4rem] md:items-center md:gap-4"
       >
-        <div className="relative mt-0.5 h-[88px] w-[88px] overflow-hidden rounded-lg bg-bg2 md:h-[96px] md:w-[96px]">
+        <div className="photo-sm relative mt-0.5 h-[88px] w-[88px] md:h-[96px] md:w-[96px]">
           <Image
             src={src}
             alt={item.name}

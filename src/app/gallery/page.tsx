@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/gallery" },
   openGraph: {
     title: "Gallery | Sue Patisserie",
-    description: "Cakes, brownies, macarons and cheesecakes from the home atelier.",
+    description: "Cakes, brownies, macarons and cheesecakes from a professional certified baker in Bengaluru.",
     images: [{ url: "/images/real-jungle.jpg", alt: "Jungle theme cake from Sue Patisserie" }],
   },
 };
@@ -22,7 +22,7 @@ export default function GalleryPage() {
         <p className="font-script text-4xl text-accent">the lookbook</p>
         <h1 className="font-display text-4xl italic md:text-5xl">Gallery</h1>
         <p className="mx-auto mt-4 max-w-xl text-[15px] text-muted">
-          Real cakes from the atelier — tap any photo for flavour, frosting and
+          Real cakes from the kitchen — tap any photo for flavour, frosting and
           price.
         </p>
       </header>
@@ -31,9 +31,9 @@ export default function GalleryPage() {
           <Link
             key={shot.src}
             href={shot.href}
-            className="group mb-4 block break-inside-avoid overflow-hidden bg-bg2"
+            className="group mb-4 block break-inside-avoid"
           >
-            <div className="relative aspect-[4/5] w-full">
+            <div className="photo relative aspect-[4/5] w-full">
               <Image
                 src={shot.src}
                 alt={shot.alt}

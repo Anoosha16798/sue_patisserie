@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     "custom theme cakes",
     "whipped cream frosting",
     "buttercream frosting",
-    "home bakery Bangalore",
+    "professional certified baker Bengaluru",
     "eggless brownies",
     "eggless cheesecake",
     "baby shower cake",

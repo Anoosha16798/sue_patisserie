@@ -81,7 +81,7 @@ export default async function MenuItemPage({ params }: ItemPageProps) {
       </Link>
       <div className="mt-8 grid gap-10 lg:grid-cols-2">
         <div>
-          <div className="relative aspect-[4/5] overflow-hidden bg-bg2">
+          <div className="photo relative aspect-[4/5]">
             <Image
               src={hero}
               alt={`${item.name} from Sue Patisserie`}
@@ -93,7 +93,7 @@ export default async function MenuItemPage({ params }: ItemPageProps) {
           </div>
           <div className="mt-2 grid grid-cols-4 gap-2">
             {item.images.slice(1, 5).map((src, index) => (
-              <div key={src + String(index)} className="relative aspect-square overflow-hidden bg-bg2">
+              <div key={src + String(index)} className="photo-sm relative aspect-square">
                 <Image
                   src={src}
                   alt={`${item.name}, photo ${index + 2}`}
