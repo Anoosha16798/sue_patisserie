@@ -21,18 +21,18 @@ export function Navbar() {
   return (
     <header
       className={`sticky top-0 z-50 ${
-        scrolled ? "border-b border-line bg-bg/90 backdrop-blur-sm" : "bg-bg"
+        scrolled ? "border-b border-line bg-bg/92 backdrop-blur-md" : "bg-bg"
       }`}
     >
       <nav
-        className="mx-auto flex max-w-[980px] items-center justify-between px-5 py-4 md:px-8"
+        className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-5 py-3 md:px-8 md:py-4"
         aria-label="Primary"
       >
-        <Link href="/" className="font-display text-[1.45rem] tracking-[0.04em]">
+        <Link href="/" className="font-script text-[1.85rem] leading-none text-fg md:text-[2.1rem]">
           {siteConfig.name}
         </Link>
 
-        <ul className="hidden items-center gap-8 text-[13px] tracking-[0.08em] md:flex">
+        <ul className="hidden items-center gap-7 text-[12px] tracking-[0.16em] uppercase md:flex">
           {navLinks.map((link) => {
             const active =
               link.href === "/"
@@ -53,12 +53,15 @@ export function Navbar() {
 
         <div className="hidden items-center gap-4 md:flex">
           <ThemeSwitch />
-          <Link href="/contact" className="text-[13px] tracking-[0.08em]">
+          <Link
+            href="/contact"
+            className="rounded-full bg-invert px-4 py-2 text-[11px] tracking-[0.16em] text-on-invert uppercase"
+          >
             Order
           </Link>
         </div>
 
-        <div className="flex items-center gap-2 md:hidden">
+        <div className="flex items-center gap-1 md:hidden">
           <ThemeSwitch />
           <button
             type="button"
@@ -78,12 +81,17 @@ export function Navbar() {
               <Link
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="block py-2 text-[15px]"
+                className="block py-2.5 text-[16px]"
               >
                 {link.label}
               </Link>
             </li>
           ))}
+          <li>
+            <Link href="/contact" onClick={() => setOpen(false)} className="block py-2.5 text-[16px]">
+              Order
+            </Link>
+          </li>
         </ul>
       ) : null}
     </header>

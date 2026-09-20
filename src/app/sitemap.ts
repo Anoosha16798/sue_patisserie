@@ -3,11 +3,11 @@ import { menuItems } from "@/data/menu";
 import { siteConfig } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ["", "/menu", "/about", "/contact"].map((route) => ({
+  const staticRoutes = ["", "/menu", "/gallery", "/about", "/contact"].map((route) => ({
     url: `${siteConfig.url}${route}`,
     lastModified: new Date(),
     changeFrequency: "weekly" as const,
-    priority: route === "" ? 1 : 0.8,
+    priority: route === "" ? 1 : route === "/menu" || route === "/gallery" ? 0.9 : 0.8,
   }));
 
   const itemRoutes = menuItems.map((item) => ({

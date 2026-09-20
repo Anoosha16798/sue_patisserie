@@ -1,74 +1,117 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, IBM_Plex_Sans } from "next/font/google";
+import { Great_Vibes, Playfair_Display, Outfit } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
-const display = Cormorant_Garamond({
+const display = Playfair_Display({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
 });
 
-const body = IBM_Plex_Sans({
+const script = Great_Vibes({
+  variable: "--font-script",
+  subsets: ["latin"],
+  weight: "400",
+});
+
+const body = Outfit({
   variable: "--font-body",
   subsets: ["latin"],
-  weight: ["400", "500"],
+  weight: ["300", "400", "500"],
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} | Eggless cake menu`,
+    default: `${siteConfig.name} | 100% eggless cakes in Bengaluru`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
   keywords: [
-    "eggless bakery menu",
-    "custom cakes Bengaluru",
+    "Sue Patisserie",
+    "eggless bakery Bengaluru",
+    "eggless birthday cake",
+    "custom theme cakes",
     "whipped cream frosting",
     "buttercream frosting",
-    "Sue Patisserie",
+    "home bakery Bangalore",
+    "eggless brownies",
+    "eggless cheesecake",
+    "baby shower cake",
   ],
+  authors: [{ name: siteConfig.name }],
+  creator: siteConfig.name,
   openGraph: {
     type: "website",
     locale: siteConfig.locale,
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: `${siteConfig.name} | Eggless cake menu`,
+    title: `${siteConfig.name} | 100% eggless cakes in Bengaluru`,
     description: siteConfig.description,
-    images: [{ url: "/images/real-gold-side.jpg", width: 1200, height: 630, alt: "Sue Patisserie chocolate cake" }],
+    images: [
+      {
+        url: "/images/real-gold-side.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Gold-dusted chocolate cake from Sue Patisserie",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} | Eggless cake menu`,
+    title: `${siteConfig.name} | 100% eggless cakes in Bengaluru`,
     description: siteConfig.description,
     images: ["/images/real-gold-side.jpg"],
   },
-  robots: { index: true, follow: true },
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
   alternates: { canonical: "/" },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Bakery",
-  name: siteConfig.name,
-  description: siteConfig.description,
-  url: siteConfig.url,
-  telephone: siteConfig.phoneDisplay,
-  email: siteConfig.email,
-  menu: `${siteConfig.url}/menu`,
-  servesCuisine: "Eggless desserts",
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Bengaluru",
-    addressCountry: "IN",
-  },
+  "@graph": [
+    {
+      "@type": "Bakery",
+      "@id": `${siteConfig.url}/#bakery`,
+      name: siteConfig.name,
+      description: siteConfig.description,
+      url: siteConfig.url,
+      image: `${siteConfig.url}/images/real-gold-side.jpg`,
+      telephone: siteConfig.phoneDisplay,
+      email: siteConfig.email,
+      priceRange: "₹₹",
+      servesCuisine: ["Eggless desserts", "Indian bakery"],
+      menu: `${siteConfig.url}/menu`,
+      sameAs: ["https://instagram.com/sue_patisserie"],
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Bengaluru",
+        addressRegion: "Karnataka",
+        addressCountry: "IN",
+      },
+      openingHoursSpecification: {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        opens: "10:00",
+        closes: "19:00",
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteConfig.url}/#website`,
+      url: siteConfig.url,
+      name: siteConfig.name,
+      publisher: { "@id": `${siteConfig.url}/#bakery` },
+    },
+  ],
 };
 
-const themeBoot = `(function(){try{var t=localStorage.getItem('sue-theme');if(t==='white'||t==='dark'||t==='pastel'){document.documentElement.setAttribute('data-theme',t);}else{document.documentElement.setAttribute('data-theme','white');}}catch(e){document.documentElement.setAttribute('data-theme','white');}})();`;
+const themeBoot = `(function(){try{var t=localStorage.getItem('sue-theme');if(t==='dark')t='black';if(t==='white'||t==='black'){document.documentElement.setAttribute('data-theme',t);}else{document.documentElement.setAttribute('data-theme','white');}}catch(e){document.documentElement.setAttribute('data-theme','white');}})();`;
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
@@ -76,7 +119,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       data-theme="white"
       suppressHydrationWarning
-      className={`${display.variable} ${body.variable} h-full antialiased`}
+      className={`${display.variable} ${script.variable} ${body.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-bg font-sans text-fg">
         <script dangerouslySetInnerHTML={{ __html: themeBoot }} />

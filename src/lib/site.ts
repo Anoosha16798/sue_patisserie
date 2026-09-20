@@ -4,7 +4,7 @@ export const siteConfig = {
   name: "Sue Patisserie",
   tagline: "100% eggless · scratch-made · wildly customizable",
   description:
-    "Sue Patisserie is a home bakery. 100% eggless cakes and desserts, made from scratch with Amul butter, Amul fresh cream and premium chocolates. No premixes.",
+    "Sue Patisserie is a Bengaluru home bakery. 100% eggless cakes, brownies, macarons and desserts, made from scratch with Amul butter, Amul fresh cream and premium chocolates. No premixes. Custom birthday, wedding, baby shower and theme cakes.",
   url: "https://suepatisserie.example.com",
   locale: "en_IN",
   phoneDisplay: "+91 98450 16798",
@@ -13,11 +13,13 @@ export const siteConfig = {
   email: "hello@suepatisserie.com",
   address: "Home atelier, Bengaluru — made to order, pan-city delivery",
   hours: "Orders: Tue–Sun, 10:00–19:00 IST · 48-hour notice preferred",
+  instagram: "@sue_patisserie",
 } as const;
 
 export const navLinks: NavLink[] = [
   { href: "/", label: "Home" },
   { href: "/menu", label: "Menu" },
+  { href: "/gallery", label: "Gallery" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
@@ -25,18 +27,13 @@ export const navLinks: NavLink[] = [
 export const socialLinks: SocialLink[] = [
   {
     name: "Instagram",
-    href: "https://instagram.com/suepatisserie",
-    label: "@suepatisserie",
+    href: "https://instagram.com/sue_patisserie",
+    label: "@sue_patisserie",
   },
   {
     name: "WhatsApp",
     href: "https://wa.me/919845016798",
     label: "Chat for custom cakes",
-  },
-  {
-    name: "Pinterest",
-    href: "https://pinterest.com/suepatisserie",
-    label: "Moodboards & florals",
   },
 ];
 

@@ -4,9 +4,9 @@ import { navLinks, siteConfig, socialLinks } from "@/lib/site";
 export function Footer() {
   return (
     <footer className="mt-auto border-t border-line">
-      <div className="mx-auto grid max-w-[980px] gap-8 px-5 py-12 text-[13px] md:grid-cols-3 md:px-8">
+      <div className="mx-auto grid max-w-6xl gap-8 px-5 py-12 text-[13px] md:grid-cols-3 md:px-8">
         <div>
-          <p className="font-display text-lg">{siteConfig.name}</p>
+          <p className="font-script text-3xl">{siteConfig.name}</p>
           <p className="mt-2 max-w-xs leading-relaxed text-muted">
             Home bakery. 100% eggless, made from scratch. No premixes.
           </p>

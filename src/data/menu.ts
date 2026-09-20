@@ -649,6 +649,25 @@ export const menuItems: MenuItem[] = [
     tags: ["cupcakes"],
   },
   {
+    id: "coffee-macaron",
+    name: "Coffee macaron bliss",
+    description: "Crispy coffee shell, dark chocolate swirl, rich ganache, toasted cookie base. Vegan and eggless.",
+    priceWhipped: 180,
+    priceButtercream: null,
+    images: cakeImages("/images/real-macaron.jpg", [...extraGallery]),
+    ingredientBullets: [
+      "Crispy coffee macaron shell, almond flour, no egg white",
+      "Dark chocolate swirl piped as a signature peak",
+      "Rich ganache layer folded with premium chocolate",
+      "Toasted cookie base — vegan and fully eggless",
+    ],
+    category: "quick-bites",
+    subcategory: "cupcakes-muffins",
+    unit: "each",
+    featured: true,
+    tags: ["macaron", "vegan", "coffee"],
+  },
+  {
     id: "red-velvet-cupcakes",
     name: "Red velvet cupcakes",
     description: "Pack of 6.",
@@ -801,8 +820,8 @@ export const menuItems: MenuItem[] = [
     description: "Plain, walnut, hazelnut or cookie dough.",
     priceWhipped: 120,
     priceButtercream: null,
-    images: cakeImages("/images/brownies.jpg", [
-      "/images/choc-mousse.jpg",
+    images: cakeImages("/images/real-brownie.jpg", [
+      "/images/brownies.jpg",
       ...extraGallery,
     ]),
     ingredientBullets: [
@@ -823,7 +842,10 @@ export const menuItems: MenuItem[] = [
     description: "Cheesecake with blueberry.",
     priceWhipped: 280,
     priceButtercream: null,
-    images: cakeImages("/images/blueberry-cheesecake.jpg", [...extraGallery]),
+    images: cakeImages("/images/real-blueberry.jpg", [
+      "/images/blueberry-cheesecake.jpg",
+      ...extraGallery,
+    ]),
     ingredientBullets: [
       "Cream-cheese filling made eggless with fresh cream",
       "House blueberry compote from whole berries",
@@ -921,7 +943,6 @@ export const featuredMedia: FeaturedMedia[] = [
     title: "Gold-dusted chocolate",
     caption: "Ganache pool, edible gold, main-character cake",
     image: "/images/real-gold-side.jpg",
-    video: "/videos/ganache-loop.mp4",
     href: "/menu/gold-dusted-chocolate",
     span: "hero",
   },

@@ -1,41 +1,54 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "About the baker",
   description:
-    "Sue Patisserie is a home bakery. All items are eggless, made from scratch with Amul butter, Amul fresh cream and premium chocolates. No premixes.",
+    "Meet the baker behind Sue Patisserie, a Bengaluru home bakery. 100% eggless cakes made from scratch with Amul butter, Amul fresh cream and premium chocolates. No premixes.",
   alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About | Sue Patisserie",
+    description: "A home atelier for eggless celebration cakes in Bengaluru.",
+    images: [{ url: "/images/chef.jpg", alt: "Pastry chef at Sue Patisserie" }],
+  },
 };
 
 export default function AboutPage() {
   return (
-    <div className="mx-auto max-w-[820px] px-5 py-14 md:px-8 md:py-20">
-      <h1 className="font-display text-3xl font-medium md:text-4xl">About</h1>
-      <div className="mt-10 grid items-start gap-10 md:grid-cols-2">
-        <div className="relative aspect-[4/5] overflow-hidden bg-bg2">
+    <div className="mx-auto max-w-5xl px-5 py-12 md:px-8 md:py-20">
+      <p className="font-script text-4xl text-accent">the baker</p>
+      <h1 className="font-display text-4xl italic md:text-5xl">About Sue</h1>
+      <div className="mt-10 grid items-center gap-10 md:grid-cols-[minmax(0,280px)_1fr] lg:grid-cols-[minmax(0,340px)_1fr]">
+        <div className="relative mx-auto aspect-[3/4] w-full max-w-[340px] overflow-hidden rounded-sm bg-bg2">
           <Image
-            src="/images/real-half-baby.jpg"
-            alt="Baby shower cake from Sue Patisserie"
+            src="/images/chef.jpg"
+            alt="Pastry chef of Sue Patisserie in the home kitchen"
             fill
-            sizes="(max-width: 768px) 100vw, 40vw"
-            className="object-cover"
+            sizes="(max-width: 768px) 80vw, 340px"
+            className="object-cover object-top"
+            priority
           />
         </div>
-        <div className="text-[15px] leading-relaxed text-muted">
+        <div className="max-w-xl text-[16px] leading-relaxed text-muted">
           <p>
-            All our items are made with premium ingredients such as Amul butter,
-            Amul fresh cream, and premium chocolates, with the utmost care and
-            cleanliness.
+            Sue Patisserie is a home bakery in Bengaluru. Every cake, brownie,
+            biscuit and jar is made to order — 100% eggless, from scratch, with
+            the same care you would want for your own table.
           </p>
           <p className="mt-4">
-            Everything is eggless and made from scratch at home, without using
-            any premixes.
+            We cook with Amul butter, Amul fresh cream and premium chocolates.
+            No premixes, no boxed sponges. You choose whipped cream or
+            buttercream, then add birthday, wedding, gym, baby shower or
+            anniversary décor.
           </p>
           <p className="mt-4">
-            Order your favourite cakes and add any customisations you like,
-            including birthday theme cakes, wedding cakes, gym theme cakes, baby
-            shower cakes, anniversary cakes, and more.
+            Forty-eight hours’ notice is a kindness. Themes take a little
+            longer. WhatsApp{" "}
+            <a href={siteConfig.phoneHref} className="text-fg underline decoration-accent">
+              {siteConfig.phoneDisplay}
+            </a>{" "}
+            if the date is close.
           </p>
         </div>
       </div>

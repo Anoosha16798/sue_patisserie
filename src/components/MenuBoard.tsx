@@ -22,9 +22,10 @@ const JUMP = [
 
 export function MenuBoard() {
   return (
-    <section id="menu" className="mx-auto max-w-[820px]">
+    <section id="menu" className="mx-auto max-w-[920px]">
       <header className="mb-10 text-center">
-        <h2 className="font-display text-[2rem] font-medium tracking-tight md:text-[2.35rem]">
+        <p className="font-script text-4xl text-accent md:text-5xl">The list</p>
+        <h2 className="mt-1 font-display text-[2.2rem] tracking-tight italic md:text-[2.7rem]">
           Menu
         </h2>
         <p className="mx-auto mt-4 max-w-[42rem] text-[15px] leading-relaxed text-muted">
@@ -67,7 +68,8 @@ export function MenuBoard() {
                 </div>
 
                 {cakes ? (
-                  <div className="mb-2 hidden grid-cols-[1fr_5.6rem_6.4rem] gap-2 text-[10px] tracking-[0.14em] text-muted uppercase md:grid">
+                  <div className="mb-2 hidden grid-cols-[96px_1fr_5.6rem_6.4rem] gap-4 text-[10px] tracking-[0.14em] text-muted uppercase md:grid">
+                    <span />
                     <span />
                     <span className="text-right">Whipped cream</span>
                     <span className="text-right">Buttercream</span>
@@ -96,20 +98,20 @@ function MenuRow({ item }: { item: MenuItem }) {
     <li className="border-b border-line/70">
       <Link
         href={`/menu/${item.id}`}
-        className="grid grid-cols-[52px_1fr] items-start gap-3 py-3.5 md:grid-cols-[52px_1fr_5.6rem_6.4rem] md:items-center md:gap-2"
+        className="grid grid-cols-[88px_1fr] items-start gap-3 py-4 md:grid-cols-[96px_1fr_5.6rem_6.4rem] md:items-center md:gap-4"
       >
-        <div className="relative mt-0.5 h-[52px] w-[52px] overflow-hidden rounded-md bg-bg2">
+        <div className="relative mt-0.5 h-[88px] w-[88px] overflow-hidden rounded-lg bg-bg2 md:h-[96px] md:w-[96px]">
           <Image
             src={src}
-            alt=""
+            alt={item.name}
             fill
-            sizes="52px"
+            sizes="96px"
             className="object-cover"
           />
         </div>
         <div className="min-w-0 md:flex md:items-baseline">
           <div className="min-w-0">
-            <p className="font-display text-[1.15rem] leading-snug font-medium">
+            <p className="font-display text-[1.22rem] leading-snug">
               {item.name}
             </p>
             <p className="mt-0.5 text-[13px] leading-snug text-muted">

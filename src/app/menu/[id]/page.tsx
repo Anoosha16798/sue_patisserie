@@ -54,8 +54,28 @@ export default async function MenuItemPage({ params }: ItemPageProps) {
     item.priceButtercream !== null;
   const hero = item.images[0] ?? "/images/hero.jpg";
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: item.name,
+    description: item.description,
+    image: item.images.map((src) => `${siteConfig.url}${src}`),
+    brand: { "@type": "Brand", name: siteConfig.name },
+    offers: {
+      "@type": "Offer",
+      priceCurrency: "INR",
+      price: item.priceWhipped ?? undefined,
+      availability: "https://schema.org/LimitedAvailability",
+      url: `${siteConfig.url}/menu/${item.id}`,
+    },
+  };
+
   return (
     <article className="mx-auto max-w-[980px] px-5 py-12 md:px-8 md:py-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Link href="/menu" className="text-[13px] text-muted">
         ← Menu
       </Link>
@@ -86,8 +106,8 @@ export default async function MenuItemPage({ params }: ItemPageProps) {
           </div>
         </div>
         <div>
-          <p className="text-[12px] text-muted">{item.unit}</p>
-          <h1 className="font-display mt-1 text-4xl font-medium">{item.name}</h1>
+          <p className="font-script text-2xl text-accent">{item.unit}</p>
+          <h1 className="font-display mt-1 text-4xl italic md:text-5xl">{item.name}</h1>
           <p className="mt-4 text-[15px] leading-relaxed text-muted">{item.description}</p>
 
           {dual ? (
@@ -117,7 +137,10 @@ export default async function MenuItemPage({ params }: ItemPageProps) {
           </ul>
 
           <div className="mt-8 flex gap-6 text-[13px]">
-            <Link href={`/contact?item=${encodeURIComponent(item.name)}`} className="underline">
+            <Link
+              href={`/contact?item=${encodeURIComponent(item.name)}`}
+              className="rounded-full bg-invert px-5 py-2.5 text-[12px] tracking-[0.14em] text-on-invert uppercase"
+            >
               Order this
             </Link>
             <Link href="/menu" className="text-muted">
