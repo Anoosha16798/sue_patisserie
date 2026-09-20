@@ -2,6 +2,8 @@ import type { MetadataRoute } from "next";
 import { menuItems } from "@/data/menu";
 import { siteConfig } from "@/lib/site";
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = ["", "/menu", "/gallery", "/about", "/contact"].map((route) => ({
     url: `${siteConfig.url}${route}`,

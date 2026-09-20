@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import type { FormEvent } from "react";
+import { useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
 import { siteConfig, socialLinks } from "@/lib/site";
 import type { ContactInquiry } from "@/types/menu";
@@ -20,15 +21,17 @@ const emptyForm: ContactInquiry = {
 };
 
 export function ContactForm({ presetItem }: ContactFormProps) {
+  const searchParams = useSearchParams();
+  const itemFromUrl = searchParams.get("item") ?? presetItem;
   const initial = useMemo<ContactInquiry>(
     () => ({
       ...emptyForm,
-      message: presetItem
-        ? `Hi Sue, I’d love to order the ${presetItem}. `
+      message: itemFromUrl
+        ? `Hi Sue, I’d love to order the ${itemFromUrl}. `
         : "",
-      occasion: presetItem ?? "",
+      occasion: itemFromUrl ?? "",
     }),
-    [presetItem],
+    [itemFromUrl],
   );
 
   const [form, setForm] = useState<ContactInquiry>(initial);
@@ -47,16 +50,22 @@ export function ContactForm({ presetItem }: ContactFormProps) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
-      if (!response.ok) {
-        const payload = (await response.json()) as { error?: string };
-        throw new Error(payload.error ?? "Could not send inquiry");
+      if (response.ok) {
+        setStatus("success");
+        setForm(emptyForm);
+        return;
       }
-      setStatus("success");
-      setForm(emptyForm);
-    } catch (caught) {
-      setStatus("error");
-      setError(caught instanceof Error ? caught.message : "Something went wrong");
+    } catch {
+      // Static hosts have no API route — fall through to WhatsApp.
     }
+    const whatsapp = new URL(siteConfig.whatsappHref);
+    whatsapp.searchParams.set(
+      "text",
+      `Order from ${form.name}\n${form.email}\n${form.phone}\n${form.occasion}\nFrosting: ${form.frosting}\n${form.message}`,
+    );
+    window.open(whatsapp.toString(), "_blank", "noopener,noreferrer");
+    setStatus("success");
+    setForm(emptyForm);
   }
 
   if (status === "success") {

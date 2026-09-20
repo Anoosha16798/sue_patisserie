@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { Suspense } from "react";
 import { ContactForm } from "@/components/ContactForm";
 import { siteConfig, socialLinks } from "@/lib/site";
 
@@ -10,12 +11,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/contact" },
 };
 
-interface ContactPageProps {
-  searchParams: Promise<{ item?: string }>;
-}
-
-export default async function ContactPage({ searchParams }: ContactPageProps) {
-  const params = await searchParams;
+export default function ContactPage() {
 
   return (
     <div className="relative overflow-hidden">
@@ -79,7 +75,9 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
             <p className="mt-1 mb-6 text-[13px] text-muted">
               Forty-eight hours’ notice is preferred. Themes need a little extra time.
             </p>
-            <ContactForm presetItem={params.item} />
+            <Suspense fallback={<p className="text-sm text-muted">Loading form…</p>}>
+              <ContactForm />
+            </Suspense>
           </div>
         </div>
       </div>
