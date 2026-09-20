@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
   ...(isStatic
     ? {
         output: "export" as const,
+        trailingSlash: true,
         typescript: { ignoreBuildErrors: true },
       }
     : {}),

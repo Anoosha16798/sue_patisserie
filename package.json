@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "build:static": "bash scripts/build-static.sh"
+    "build:static": "bash scripts/build-static.sh",
+    "deploy:surge": "bash scripts/build-static.sh && npx surge ./out sue-patisserie.surge.sh"
   },
   "dependencies": {
     "framer-motion": "^12.23.12",
