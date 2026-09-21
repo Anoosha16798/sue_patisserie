@@ -8,8 +8,8 @@ export const siteConfig = {
   url: "https://suepatisserie.example.com",
   locale: "en_IN",
   phoneDisplay: "+91 98450 16798",
-  phoneHref: "tel:+919845016798",
-  whatsappHref: "https://wa.me/919845016798",
+  phoneHref: "tel:+911234567890",
+  whatsappHref: "https://wa.me/911234567890",
   email: "hello@suepatisserie.com",
   address: "Bengaluru — made to order, pan-city delivery",
   hours: "Orders: Tue–Sun, 10:00–19:00 IST · 48-hour notice preferred",
@@ -32,7 +32,7 @@ export const socialLinks: SocialLink[] = [
   },
   {
     name: "WhatsApp",
-    href: "https://wa.me/919845016798",
+    href: "https://wa.me/911234567890",
     label: "Chat for custom cakes",
   },
 ];
