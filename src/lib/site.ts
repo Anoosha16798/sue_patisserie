@@ -7,7 +7,7 @@ export const siteConfig = {
     "Sue Patisserie is a professional certified baker in Bengaluru. 100% eggless cakes, brownies, macarons and desserts, made from scratch with Amul butter, Amul fresh cream and premium chocolates. No premixes. Custom birthday, wedding, baby shower and theme cakes.",
   url: "https://suepatisserie.example.com",
   locale: "en_IN",
-  phoneDisplay: "+91 98450 16798",
+  phoneDisplay: "+91 1234567890",
   phoneHref: "tel:+911234567890",
   whatsappHref: "https://wa.me/911234567890",
   email: "hello@suepatisserie.com",
